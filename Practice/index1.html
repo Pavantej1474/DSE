@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Information Form</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+
+    <h2>User Information Form</h2>
+
+    <form method="post" action="process.php">
+        <label for="fname">First Name:</label>
+        <input type="text" id="fname" name="fname" required><br>
+
+        <label for="lname">Last Name:</label>
+        <input type="text" id="lname" name="lname" required><br>
+
+        <label for="uname">Username:</label>
+        <input type="text" id="uname" name="uname" required><br>
+
+        <label for="address">Address:</label>
+        <textarea id="address" name="address" rows="4" required></textarea><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+</body>
+</html>
