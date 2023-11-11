@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Mouse Coordinates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #coordinates {
+            font-size: 24px;
+            margin-top: 50px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Live Mouse Coordinates</h1>
+    <p>Move your mouse across the screen to see the live coordinates:</p>
+    <div id="coordinates"></div>
+
+    <script>
+        var coordinates = document.getElementById("coordinates");
+
+        document.addEventListener("mousemove", function(event) {
+            var mouseX = event.clientX;
+            var mouseY = event.clientY;
+            coordinates.textContent = "X: " + mouseX + ", Y: " + mouseY;
+        });
+    </script>
+</body>
+</html>

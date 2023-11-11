@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Guessing Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 400px;
+            margin: 0 auto;
+            padding: 20px;
+            border: 2px solid #ccc;
+            border-radius: 10px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #message {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        input[type="number"] {
+            padding: 5px;
+            font-size: 16px;
+        }
+
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Number Guessing Game</h1>
+        <p>Guess a number between 1 and 100.</p>
+        <input type="number" id="guess" min="1" max="100">
+        <button onclick="checkGuess()">Submit Guess</button>
+        <p id="message"></p>
+        <p>You have <span id="tries">5</span> tries remaining.</p>
+    </div>
+
+    <script>
+        // JavaScript code for the game logic will go here
+        var randomNumber = Math.floor(Math.random() * 100) + 1;
+        var tries = 5;
+
+        function checkGuess() {
+            var guess = parseInt(document.getElementById("guess").value);
+            var message = document.getElementById("message");
+            var triesLeft = document.getElementById("tries");
+
+            if (guess === randomNumber) {
+                message.textContent = "Congratulations! You guessed the correct number!";
+                message.style.color = "green";
+                document.getElementById("guess").disabled = true;
+                document.querySelector("button").disabled = true;
+            } else {
+                tries--;
+                if (guess < randomNumber) {
+                    message.textContent = "Try a higher number.";
+                } else {
+                    message.textContent = "Try a lower number.";
+                }
+
+                if (tries === 0) {
+                    message.textContent = "Out of tries. The correct number was " + randomNumber + ".";
+                    document.getElementById("guess").disabled = true;
+                    document.querySelector("button").disabled = true;
+                }
+            }
+
+            triesLeft.textContent = tries;
+        }
+    </script>
+</body>
+</html>

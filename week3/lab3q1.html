@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Passport Application Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .container {
+            display: flex;
+            justify-content: space-between;
+            margin: 20px;
+        }
+
+        .left-box {
+            width: 45%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .right-box {
+            width: 45%;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="date"] {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        select {
+            width: 100%;
+            padding: 5px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .radio-label {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="left-box">
+            <h1>Date and Time</h1>
+            <p id="liveDateTime">Loading...</p>
+
+            <h1>National Call Centre</h1>
+            <p>1800-258-1800</p>
+
+            <h1>Passport Office Page</h1>
+            <label for="passportOffice">Select Passport Office City:</label>
+            <select id="passportOffice" name="passportOffice">
+                <option value="city1">Ahmedabad</option>
+                <option value="city2">Amritsar</option>
+                <option value="city3">Bareilly</option>
+                <option value="city4">Bengaluru</option>
+                <option value="city5">Bhopal</option>
+                <option value="city6">Bhubaneshwar</option>
+                <option value="city7">Chandigarh</option>
+                <option value="city8">Chennai</option>
+                <option value="city9">Cochin</option>
+                <option value="city10">Coimbatore</option>
+                <option value="city11">Dehradun</option>
+                <option value="city12">Delhi</option>
+                <option value="city13">Ghaziabad</option>
+                <option value="city14">Goa</option>
+                <option value="city15">Guwahati</option>
+                <option value="city16">Hyderabad</option>
+                <option value="city17">Jaipur</option>
+                <option value="city18">Jalandhar</option>
+                <option value="city19">Jammu</option>
+                <option value="city20">Kolkata</option>
+                <option value="city21">Kozhikode</option>
+                <option value="city22">Lucknow</option>
+               
+            </select>
+
+            <h1>Mission/Post Page</h1>
+            <label for="region">Select Region/Country:</label>
+            <select id="region" name="region">
+                <option value="region1">Afghanistan</option>
+                <option value="region2">Albania</option>
+                <option value="region1">Algeria</option>
+                <option value="region2">Andorra</option>
+                <option value="region3">Argentina</option>
+                <option value="region4">Armenia</option>
+                <option value="region5">Aruba</option>
+                <option value="region6">Australia</option>
+                <option value="region7">Austria</option>
+                <option value="region8">Bahamas</option>
+                <option value="region9">Bahrain</option>
+                <option value="region10">Bangladesh</option>
+                <option value="region11">Barbados</option>
+                <option value="region12">Belarus</option>
+                <option value="region13">Belgium</option>
+                <option value="region14">Bermuda</option>
+            </select>
+
+            <h1>Login for Official Users</h1>
+            <label for="officialUser">Select Type of Official User:</label>
+            <select id="officialUser" name="officialUser">
+                <option value="user1">Police</option>
+                <option value="user2">Immigration</option>
+            </select>
+        </div>
+
+        <div class="right-box">
+            <h1>Personal Information</h1>
+            <label for="fullName">Full Name:</label>
+            <input type="text" id="fullName" name="fullName">
+
+            <label>Gender:</label>
+            <label class="radio-label"><input type="radio" name="gender" value="male"> Male</label>
+            <label class="radio-label"><input type="radio" name="gender" value="female"> Female</label>
+            <label class="radio-label"><input type="radio" name="gender" value="other"> Other</label>
+
+            <label for="dob">Date of Birth:</label>
+            <input type="date" id="dob" name="dob">
+        </div>
+    </div>
+
+    <script>
+        function updateDateTime() {
+            const dateTimeElement = document.getElementById('liveDateTime');
+            const now = new Date();
+            const dateTimeString = now.toLocaleString();
+            dateTimeElement.textContent = dateTimeString;
+        }
+
+        updateDateTime(); // Initial update
+        setInterval(updateDateTime, 1000); // Update every second
+    </script>
+</body>
+</html>

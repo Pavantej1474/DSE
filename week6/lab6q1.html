@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pop-up Boxes Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        /* Styles for the custom pop-up */
+        .custom-popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #f9f9f9;
+            border: 1px solid #ccc;
+            padding: 20px;
+            z-index: 999;
+        }
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>JavaScript Pop-up Boxes Example</h1>
+        <p>In JavaScript, you can create different types of pop-up boxes to interact with users:</p>
+        
+        <h2>1. Alert Box</h2>
+        <p>Alert boxes display a message to the user.</p>
+        <button onclick="showAlert()">Show Alert</button>
+
+        <h2>2. Confirm Box</h2>
+        <p>Confirm boxes ask for user confirmation with "OK" and "Cancel" buttons.</p>
+        <button onclick="showConfirm()">Show Confirm</button>
+
+        <h2>3. Prompt Box</h2>
+        <p>Prompt boxes prompt the user for input.</p>
+        <button onclick="showPrompt()">Show Prompt</button>
+
+        <h2>4. Custom Pop-up Box</h2>
+        <p>Create a custom modal pop-up box.</p>
+        <button onclick="showCustomPopup()">Show Custom Pop-up</button>
+
+        <h2>Output</h2>
+        <div id="output"></div>
+
+        <!-- Custom Pop-up Box -->
+        <div id="customPopup" class="custom-popup">
+            <span class="close" onclick="closeCustomPopup()">&times;</span>
+            <h2>Hello</h2>
+            <p>have a good day.</p>
+        </div>
+    </div>
+
+    <script>
+        function showAlert() {
+            alert("This is an alert box!");
+        }
+
+        function showConfirm() {
+            var result = confirm("Are you sure you want to continue?");
+            var output = document.getElementById("output");
+            output.innerHTML = result ? "User clicked OK" : "User clicked Cancel";
+        }
+
+        function showPrompt() {
+            var userInput = prompt("Please enter your name:", "John Doe");
+            var output = document.getElementById("output");
+            if (userInput !== null) {
+                output.innerHTML = "Hello, " + userInput + "!";
+            } else {
+                output.innerHTML = "No name entered.";
+            }
+        }
+
+        function showCustomPopup() {
+            var popup = document.getElementById("customPopup");
+            popup.style.display = "block";
+        }
+
+        function closeCustomPopup() {
+            var popup = document.getElementById("customPopup");
+            popup.style.display = "none";
+        }
+    </script>
+</body>
+</html>

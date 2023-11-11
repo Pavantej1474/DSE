@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New Browser Window Example</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="openNewWindow()">Open New Window</button>
+
+    <script>
+        function openNewWindow() {
+            // Open a new browser window with specified dimensions
+            var newWindow = window.open('', '', 'width=400,height=300');
+
+            // Content to the new window
+            newWindow.document.write('<html><head><title>New Window</title></head><body>');
+            newWindow.document.write('<h1>Hello from the new window!</h1>');
+            newWindow.document.write('<p>Clearly the code works.</p>');
+            newWindow.document.write('</body></html>');
+
+            // Close the document to complete the HTML structure
+            newWindow.document.close();
+        }
+    </script>
+</body>
+</html>

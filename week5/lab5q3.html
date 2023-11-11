@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wild Flower Animation</title>
+<style>
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgb(165, 255, 169);
+}
+
+.stem {
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    width: 5px;
+    height: 150px;
+    background-color: green;
+    border-radius: 2px;
+}
+
+.flower {
+    position: absolute;
+    bottom: 150px;
+    left: calc(50% - 25px);
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: rgb(212, 255, 0);
+}
+
+.petal {
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    border-radius: 25px;
+    background-color: orange;
+    animation: 5s linear 0s infinite normal forwards running bloom;
+}
+
+.one {
+    bottom: 40px;
+    transform-origin: bottom center;
+}
+
+.two {
+    bottom: 20px;
+    left: 35px;
+    transform-origin: bottom left;
+}
+
+.three {
+    bottom: -20px;
+    left: 35px;
+    transform-origin: top left;
+}
+
+.four {
+    bottom: -40px;
+    transform-origin: top center;
+}
+
+.five {
+    bottom: 20px;
+    left: -35px;
+    transform-origin: bottom right;
+}
+
+.six {
+    bottom: -20px;
+    left: -35px;
+    transform-origin: top right;
+}
+
+@keyframes bloom {
+    from {
+        transform: scale(0);
+    }
+    to {
+        transform: scale(1.0);
+    }
+}
+</style>
+</head>
+<body>
+    <div class="stem"></div>
+    <div class="flower">
+        <div class="petal one"></div>
+        <div class="petal two"></div>
+        <div class="petal three"></div>
+        <div class="petal four"></div>
+        <div class="petal five"></div>
+        <div class="petal six"></div>
+    </div>
+</body>
+</html>

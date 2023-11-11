@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Photo Gallery - Your Photo Magazine</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f0f0;
+  }
+  .header {
+    background-color: #22313F;
+    color: white;
+    text-align: center;
+    padding: 20px;
+  }
+  .navigation {
+    background-color: #3E4E5E;
+    padding: 10px;
+    text-align: center;
+  }
+  .navigation a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+  }
+  .content {
+    padding: 20px;
+    text-align: center;
+  }
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-gap: 15px;
+    justify-items: center;
+  }
+  .gallery img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+  }
+.gallery img:hover {
+  transform: scale(1.05); /* Increase the size of the image on hover */
+  transition: transform 0.3s ease; /* Add a smooth transition effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3); /* Add a subtle shadow on hover */
+}
+
+</style>
+</head>
+<body>
+  <div class="header">
+    <h1>Photo Gallery</h1>
+  </div>
+  <div class="navigation">
+    <a href="magazinefp.html">Home</a>
+    <a href="gallery.html">Photo Gallery</a>
+  </div>
+  <div class="content">
+    <div class="gallery">
+      <a href="image1.html">
+        <img src="image1.jpg" alt="Photo 1">
+      </a>
+      <a href="image2.html">
+        <img src="image2.jpg" alt="Photo 2">
+      </a>
+      <a href="image3.html">
+        <img src="image3.jpg" alt="Photo 3">
+      </a>
+      <a href="image4.html">
+        <img src="image4.jpg" alt="Photo 4">
+      </a>
+      <a href="image5.html">
+        <img src="image5.jpg" alt="Photo 5">
+      </a>
+      <a href="image6.html">
+        <img src="image6.jpg" alt="Photo 6">
+      </a>
+      <a href="image7.html">
+        <img src="image7.jpg" alt="Photo 7">
+      </a>
+      <a href="image8.html">
+        <img src="image8.jpg" alt="Photo 8">
+      </a>
+      <a href="image9.html">
+        <img src="image9.jpg" alt="Photo 9">
+      </a>
+      <a href="image10.html">
+        <img src="image10.jpg" alt="Photo 10">
+      </a>
+
+    </div>
+  </div>
+</body>
+</html>

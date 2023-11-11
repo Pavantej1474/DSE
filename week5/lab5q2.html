@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revolve Planets Around Sun (Different Revolution Times)</title>
+<style>
+  body {
+    background-color: #000;
+    margin: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .sun {
+    width: 100px;
+    height: 100px;
+    background-color: #fecd38;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .planet {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    position: absolute;
+  }
+
+  .planet.mercury {
+    background-color: #d9d9d9;
+  }
+
+  .planet.venus {
+    background-color: #ffc600;
+  }
+
+  .planet.earth {
+    background-color: #1976d2;
+  }
+
+  .planet.mars {
+    background-color: #ff5733;
+  }
+
+  .planet.jupiter {
+    background-color: #ffaa00;
+  }
+
+  .planet.saturn {
+    background-color: #ffdb58;
+  }
+
+  .planet.uranus {
+    background-color: #00ced1;
+  }
+
+  .planet.neptune {
+    background-color: #0066ff;
+  }
+</style>
+</head>
+<body>
+  <div class="sun"></div>
+  <div class="planet mercury"></div>
+  <div class="planet venus"></div>
+  <div class="planet earth"></div>
+  <div class="planet mars"></div>
+  <div class="planet jupiter"></div>
+  <div class="planet saturn"></div>
+  <div class="planet uranus"></div>
+  <div class="planet neptune"></div>
+  <script>
+    const sun = document.querySelector('.sun');
+    const planets = document.querySelectorAll('.planet');
+
+    const orbitalRadii = [80, 120, 160, 200, 280, 360, 440, 520]; // Adjust orbital radii as needed
+
+    // Different increment values for each planet to control their revolution speed
+    const revolutionSpeeds = [0.015, 0.013, 0.012, 0.015, 0.011, 0.0097, 0.0075, 0.0045];
+
+    let angles = Array.from({ length: planets.length }, () => 0);
+
+    function updatePlanetPositions() {
+      const centerX = window.innerWidth / 2;
+      const centerY = window.innerHeight / 2;
+
+      planets.forEach((planet, index) => {
+        const radius = orbitalRadii[index];
+        const angle = angles[index];
+
+        const planetX = centerX + radius * Math.cos(angle);
+        const planetY = centerY + radius * Math.sin(angle);
+
+        planet.style.left = planetX + 'px';
+        planet.style.top = planetY + 'px';
+
+        angles[index] += revolutionSpeeds[index]; // Use different revolution speeds for each planet
+      });
+
+      requestAnimationFrame(updatePlanetPositions);
+    }
+
+    updatePlanetPositions();
+  </script>
+</body>
+</html>
